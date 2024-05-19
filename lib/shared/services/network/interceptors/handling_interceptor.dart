@@ -2,12 +2,15 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:my_template/main.dart';
+import 'package:my_template/shared/services/local/local_storage.dart';
 import 'package:my_template/shared/utils/constants/api_constant.dart';
 import 'package:my_template/shared/utils/routes/app_routes.dart';
 import 'package:my_template/shared/widgets/custom_toast.dart';
 
 ///Interceptor for debugging
 class HandlingInterceptor extends QueuedInterceptor {
+  final _storage = LocalStorage.instance;
+
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler)async{
     // TODO: implement onRequest
