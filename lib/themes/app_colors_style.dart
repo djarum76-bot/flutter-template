@@ -221,7 +221,7 @@ class AppTheme {
       colorScheme: ColorScheme.fromSeed(seedColor: _AppColorPaletteLight.primary),
       scaffoldBackgroundColor: _AppColorPaletteLight.background,
       extensions: [_lightAppColors],
-      appBarTheme: const AppBarTheme(color: _AppColorPaletteLight.background)
+      appBarTheme: const AppBarTheme(color: _AppColorPaletteLight.background),
   );
 
   static final AppColorsExtension _lightAppColors = AppColorsExtension(

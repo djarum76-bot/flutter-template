@@ -37,4 +37,5 @@ class LocalStorage{
   }
 
   Future<String> get token async => (await _box).get(StorageKey.token);
+  Future<dynamic> get light async => (await _box).get(StorageKey.light);
 }

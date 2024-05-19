@@ -26,7 +26,7 @@ class TokenInterceptor extends QueuedInterceptor {
       customOptions.headers.toString(),
       name: "Headers from TokenInterceptor",
     );
-    handler.next(customOptions);
+    // handler.next(customOptions);
 
     super.onRequest(options, handler);
   }

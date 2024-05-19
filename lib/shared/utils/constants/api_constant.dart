@@ -4,6 +4,7 @@ abstract class ApiConstant{
 
   /// response
   static const message = "message";
+  static const error = "error";
 
   /// authentication
   static const email = "email";
