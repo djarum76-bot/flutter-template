@@ -18,6 +18,7 @@ void main() async {
   final appDocumentDirectory = await getApplicationDocumentsDirectory();
   await Hive.initFlutter(appDocumentDirectory.path);
 
+  await ScreenUtil.ensureScreenSize();
   injectorSetup();
   runApp(const MyApp());
 }
@@ -50,7 +51,14 @@ class MyApp extends StatelessWidget {
             designSize: const Size(393, 852),
             minTextAdapt: true,
             splitScreenMode: true,
-            builder: (_, child){
+            builder: (context, child){
+              var shortestSide = MediaQuery.of(context).size.shortestSide;
+              final bool isTablet = shortestSide > 600;
+
+              if(isTablet){
+                ScreenUtil.init(context);
+              }
+
               return GestureDetector(
                 behavior: HitTestBehavior.opaque,
                 onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
